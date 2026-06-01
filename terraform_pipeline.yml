@@ -48,8 +48,7 @@ stages:
     # TFLint is a Terrraform linter/ID sec issues 
     - script: |
         echo "##[command]Installing TFLint..."
-        curl -sSLO https://github.com/terraform-linters/tflint/releases/latest/download/tflint_linux_amd64.zip
-        unzip tflint_linux_amd64.zip
+        curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash 
         tflint --init
         
         echo "##[command]Running TFLint..."
